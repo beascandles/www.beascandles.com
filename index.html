@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beas Candles</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/jpg" href="Beas Candle LOGO.jpeg" >
+<style>
+  :root {
+    --lavender: #e6e6fa;
+    --light-pink: #fcd6e6;
+    --dark-pink: #d88ca0;
+    --text-color: #4a4a4a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background-color: var(--lavender);
+    color: var(--text-color);
+  }
+
+  header {
+    background-color: var(--light-pink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  nav {
+    display: inline;
+    color: var(--dark-pink);
+    text-align: center;
+    justify-content: center;
+    padding-right: 550px;
+    font-size: 20px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav h1 {
+    text-align: center;
+    justify-content: center;
+    padding-right: 100px;
+    font-size: 32px;
+  }
+
+  section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .about, .products, .gallery, .contact {
+    margin-bottom: 4rem;
+  }
+
+  .about {
+    margin-top: 100px;
+    background-color: #fef6f2;
+    border-radius: 12px;
+    padding: auto;
+  }
+
+  .about p, .product p {
+    color: #d88ca0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .about h2, .products h2, .gallery h2, .contact h2 {
+    font-size: 2rem;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+  }
+
+  .products-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .product, .gallery-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .product img, .gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  
+  .footer-container{
+    display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto; gap: 20px;
+  }
+
+  footer p {
+    text-decoration: none;
+    color: #cb8f9f;
+    font-weight: bold;
+  }
+
+  .reviews, .contact, .why-choose-us {
+    background-color: #fef6f2;
+    padding: 50px 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--dark-pink);
+  }
+
+  .review-container, .reasons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .review-card {
+    background: #fff;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .review-card p {
+    color: #fef6f2;
+  }
+
+  .reason {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 4px 6px rgba(7, 7, 7, 0.1);
+    font-weight: bold;
+  }
+
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    background-color: #ffb997;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  footer{
+    width: 0px;
+  }
+
+
+  /* Tablets (width between 600px and 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  nav {
+    padding-right: 0;
+  }
+
+  .products-grid, .gallery-grid, .review-container, .reasons, .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .delivery img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile Phones (width less than 600px) */
+@media screen and (max-width: 599px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  nav h1 {
+    padding-right: 0;
+    font-size: 24px;
+  }
+
+  .products-grid, .gallery-grid, .review-container, .reasons, .footer-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .product img, .gallery-item img, .delivery img {
+    height: auto;
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .reason {
+    width: 100%;
+  }
+}
+
+
+  
+</style>
+
+</head>
+<body>
+  <header>
+    <img src="https://i.ibb.co/VcB0CsRB/Beas-Candle-LOGO-bg.png" alt="Beas Candles Logo" class="logo">
+    <nav>
+      <h1>Beas Candles  </h1>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <h2>About Beas Candles</h2>
+    <p>Welcome to Beas Candles, a heartfelt journey crafted by Mrs. Sakshi Mishra — a passionate entrepreneur from Panki, Kanpur (Uttar Pradesh). What started as a humble kitchen experiment has blossomed into a beautiful startup dedicated to spreading warmth, light, and a touch of elegance.</p><br>
+    <p>At Beas Candles, we believe that a candle is more than just wax and wick — it's an experience. Each piece is handcrafted with love, care, and creativity, reflecting the founder’s commitment to quality and artistry. Our candles come in a delightful variety of scents and colors, perfect for every mood, moment, and memory.</p><br>
+    <p>Whether you're seeking a calming aroma to unwind or a vibrant centerpiece to uplift your space, Beas Candles is your go-to destination for unique, eco-friendly, and soul-soothing creations.</p><br>
+    <p>Thank you for being part of our story. We’re just getting started — and we’re glowing brighter every day.</p><br>
+    </section>
+    
+
+  <section class="products" id="products">
+    <h2>Our Products</h2>
+    <div class="products-grid">
+      <div class="product">
+        <img src="https://i.ibb.co/pvXMmvtS/Whats-App-Image-2025-05-02-at-1-55-47-PM.jpg" alt="Lavender Candle">
+        <p>Scented Diya Candles </p>
+        <p>Set of 4 in just ₹119</p><br><button style="background-color: #d88ca0; border: none; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; font-weight: bold; color: white; cursor: pointer;">
+  <a href="https://chat.whatsapp.com/JGaWRKs6HFEKxrZk3xxbUf" style="color: white; text-decoration: none;">Buy Now</a>
+</button>
+
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/5g1BfS7B/product-image.png" alt="product-image" alt="Vanilla Dream">
+        <p>Scented Crystle Glass Candles</p>
+        <p>Pair of 2 in just ₹149</p><br><button style="background-color: #d88ca0; border: none; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; font-weight: bold; color: white; cursor: pointer;">
+  <a href="https://chat.whatsapp.com/JGaWRKs6HFEKxrZk3xxbUf" style="color: white; text-decoration: none;">Buy Now</a>
+</button>
+
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/bMGtqQCJ/Whats-App-Image-2025-04-25-at-22-34-07.jpg" alt="Vanilla Dream">
+        <p>Flower Stick Candles</p>
+        <p>Pair of 2 in just ₹100</p><br><button style="background-color: #d88ca0; border: none; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; font-weight: bold; color: white; cursor: pointer;">
+  <a href="https://chat.whatsapp.com/JGaWRKs6HFEKxrZk3xxbUf" style="color: white; text-decoration: none;">Buy Now</a>
+</button>
+
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/3ybxS7dQ/Whats-App-Image-2025-05-04-at-10-43-46-PM.png">
+        <p>Scented Bowl Candles</p>
+        <p>1 Candle  in just ₹100</p><br><button style="background-color: #d88ca0; border: none; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; font-weight: bold; color: white; cursor: pointer;">
+  <a href="https://chat.whatsapp.com/JGaWRKs6HFEKxrZk3xxbUf" style="color: white; text-decoration: none;">Buy Now</a>
+</button>
+
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- Why do you choose us  -->
+   <section class="why-choose-us">
+  <h2>Why Choose Beas Candles?</h2><br><br>
+  <div class="reasons">
+    <div class="reason">🌿 Eco-Friendly Materials </div>
+    <div class="reason">🕯️ Handmade With Love</div>
+    <div class="reason">🎁 Perfect for Gifting</div>
+    <div class="reason">💖 Soothing Aromas</div>
+  </div>
+</section>
+
+<!-- Gallery -->
+
+  <section class="gallery" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/sddrm4TJ/product-image-3.png" alt="product-image-3">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/5g1BfS7B/product-image.png" alt="product-image" >
+      </div>
+      
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/FL8LQjqR/Whats-App-Image-2025-04-25-at-22-34-06.jpg" alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/bMGtqQCJ/Whats-App-Image-2025-04-25-at-22-34-07.jpg" alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/pvXMmvtS/Whats-App-Image-2025-05-02-at-1-55-47-PM.jpg" alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/3ybxS7dQ/Whats-App-Image-2025-05-04-at-10-43-46-PM.png" alt="Gallery Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/ynRqvHRQ/45455.png" alt="Gallery Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/4wpBLzsb/assets-V2-BXo-Hg-Se-Qlsf169e-Es-VSd-asset.png" alt="Gallery Image 2">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<section style="background-color: #fef6f2; padding: 60px 20px; font-family: 'Segoe UI', sans-serif; color: #4a4a4a;">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: auto; gap: 40px;">
+
+    <!-- Left Side: Description -->
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="color: #d88ca0; font-size: 28px; margin-bottom: 20px;">Fast & Safe Delivery</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--dark-pink);color: #d88ca0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        Just a heads up about our delivery charges. If your order totals more than 450 rupees, you'll enjoy free delivery - our treat! For orders below 200 rupees, there's a small delivery fee of 85 rupees. 
+        <br><br>If your order falls between 200 and 350 rupees, the delivery charge is 70 rupees. And for orders between 350 and 450 rupees, the delivery fee is just 50 rupees. Happy shopping!"
+        
+      </p>
+    </div>
+
+    <!-- Right Side: Image -->
+    <div class="delivery" style="flex: 1; min-width: 300px;">
+      <img src="https://i.ibb.co/sJKR7dpy/Delivery-Service.png" alt="Delivery Image" style="height: 450px; width: 350px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover;">
+    </div>
+
+  </div>
+</section>
+ <br><br>
+<!-- customer reviews -->
+  <section class="reviews">
+  <h2>Customer Reviews</h2>
+  <br>
+  <div class="review-container">
+    <div class="review-card">
+      <p><a href="https://www.instagram.com/stories/highlights/17847929805463185/"><h2> 👉🏻Reviews👈🏻</h2></a></p>
+      <h4>@beascandles__</h4>
+    </div>
+   
+  </div>
+</section><br><br>
+
+<!-- Contact -->
+<section class="contact">
+  <h2>Customer Support </h2>
+  <p style="font-size: 16px; line-height: 1.6;color: #d88ca0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+         If you've got any questions or doubts about our candles, delivery process, pricing, or anything else about our products, we're here to help! Just click the button below to chat directly with our team. We're always ready to assist you
+        <br><br>
+        <button style="background-color: #d88ca0; border: none; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; font-weight: bold; color: white; cursor: pointer;">
+  <a href="https://chat.whatsapp.com/F28MIHgYYp42JrVOR3yuNl" style="color: white; text-decoration: none;">Customer Support</a>
+</button>
+
+      </p>
+</section><br><br>
+
+<footer style="width:100%; background-color: #fcd6e6; padding: 40px 20px; color: #4a4a4a; font-family: 'Segoe UI', sans-serif; box-sizing: border-box;">
+  <div class="footer-container">
+
+    <!-- About Us -->
+    <div class="footer-section" style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d88ca0; margin-bottom: 10px;">Beas</h3>
+      <p>Beas Candles offers hand-poured, eco-friendly candles made with love and care. Each scent is crafted to bring warmth and calm to your space.</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section" style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d88ca0; margin-bottom: 10px;">Contact</h3>
+      <p>Email: beascandles2404@gmail.com</p>
+      <p>Location: Pankbahadur Nagar, Panki, Kanpur 208020, Uttar Pradesh, India</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-section" style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d88ca0; margin-bottom: 10px;">Follow Us</h3>
+      <p>Instagram: <a href="https://www.instagram.com/beascandles__" style="color: #e230aa; text-decoration: none;" target="_blank">@beascandles__</a></p>
+    </div>
+
+    <!-- Policy -->
+    <div class="footer-section" style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d88ca0; margin-bottom: 10px;">Policy</h3>
+      <p>All sales are final unless the product arrives damaged.</p>
+      <p>Refunds are issued only for defective or incorrect items.</p>
+      <p>Returns must be initiated within 1 day of delivery.</p>
+    </div>
+
+  
+
+  <hr style="margin: 30px 0; border: none; border-top: 1px solid #e6e6fa;">
+
+  <p style="text-align: center; color: #cb8f9f; font-weight: bold;">
+    &copy; 2025 Beas Candles. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
